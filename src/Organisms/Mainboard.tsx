@@ -5,7 +5,6 @@ import { useAppSelector } from '../hooks'
 import { deleteTask, moveTask, changeTask, changeColor } from '../slice';
 import { useDispatch } from 'react-redux'
 const Mainboard = () => {
-
     const allTasks = useAppSelector((state) => state.tasks)
     const dispatch = useDispatch()
     const [taskID, taskIDSet] = useState(Number)
@@ -34,28 +33,21 @@ const Mainboard = () => {
         taskIDSet(id)
     }
 
-    function handleChangeColor(id: number, color: string) { //Изменяю цвет таски с помощью Redux reuducer'a
+    function handleChangeColor(id: number, color: string) {
         dispatch(changeColor({
             id: id,
             color: color
         }))
     }
-    function handleChange(id: number, info: string | null) { //Изменяю описание таски с помощью Redux reuducer'a
+    function handleChange(id: number, info: string | null) {
         dispatch(changeTask({
             id: id,
             info: info,
         }))
         console.log(id + " " + info)
     }
-    function handleMove(index: number, row: number) { //Изменяю колонку таски с помощью Redux reuducer'a
-        if (row !== boards.length)
-            dispatch(moveTask({
-                index: index,
-                row: row
-            }))
-    }
 
-    function handleDelete(id: number) { //Удаляю таску с помощью Redux reducer'a
+    function handleDelete(id: number) {
         dispatch(deleteTask(id))
     }
 };

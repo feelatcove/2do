@@ -32,7 +32,7 @@ const MyModal = ({setModal}: Props) => {
         </div>
     );
 
-    function handleCreate() { //Функция добавления нового таски в массив со всем тасками (Redux) (также очищаю валуев инпутов и цвета)
+    function handleCreate() {
         if (inputValue !== '' && colorValue) {
             dispatch(addNewTask({
                 info: inputValue,

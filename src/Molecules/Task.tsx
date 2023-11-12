@@ -15,7 +15,7 @@ type Props = {
 
 const Task = ({taskNumber, info, color, deleted, changed, changedColor, onDragStart}: Props) => {
     const [optionsActive, setOptionsActive] = useState<boolean>(false)
-    const [currentColor, currentColorSet] = useState<string>(color)
+    const [currentColor, setCurrentColor] = useState<string>(color)
     const [taskValue, setTaskValue] = useState<string | null>(`${info}`)
     return (
         <div draggable onDragStart={() => onDragStart(taskNumber)} className={'w-full rounded-md flex flex-col text-3xl shadow-sm border-gray-400 border mb-4 cursor-grab ' + currentColor}>
@@ -27,7 +27,7 @@ const Task = ({taskNumber, info, color, deleted, changed, changedColor, onDragSt
             {optionsActive ? <Options setColor={() => handleColor()} deleted={deleted} /> : <></>}
             <div className='text-center w-full bg-gray-200 rounded-b-md cursor-pointer hover:bg-gray-100' onClick={() => handleChanging()}>{taskValue}</div>
         </div>
-    ); //Описание таски /|\ через <div> а не <input>*
+    );
 
     function handleChanging() { //Изменение описания таски + запись в хранилище (*через промпт ибо с инпута слетал фокус из-за ререндера, можно пофиксить useRef'om но не стал)
         const newInfo = prompt('Change your task', `${info}`)
@@ -36,17 +36,17 @@ const Task = ({taskNumber, info, color, deleted, changed, changedColor, onDragSt
         changed(taskNumber, newInfo)
     }
 
-    function handleColor() {  //Измнение цвета таски + запись в хранилище
+    function handleColor() {
         if (currentColor === 'bg-green-300') {
-            currentColorSet('bg-yellow-300')
+            setCurrentColor('bg-yellow-300')
             changedColor(taskNumber, 'bg-yellow-300')
         }
         if (currentColor === 'bg-yellow-300') {
-            currentColorSet('bg-red-300')
+            setCurrentColor('bg-red-300')
             changedColor(taskNumber, 'bg-red-300')
         }
         if (currentColor === 'bg-red-300') {
-            currentColorSet('bg-green-300')
+            setCurrentColor('bg-green-300')
             changedColor(taskNumber, 'bg-green-300')
         }
     }
