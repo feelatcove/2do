@@ -1,0 +1,18 @@
+{/* <div >
+            <div className='flex flex-row justify-evenly mt-8'>
+
+                <Board onDrop={handleDrop} onDragOver={handleDragOver} key={'board1'} row={1} name={'To Do:'} >
+                    {allTasks.allTasks.map((item, index) => item.row === 1 ? <Task  taskNumber={item.id} info={item.info} row={item.row} color={item.color} key={item.id + item.info} 
+                    deleted={() => handleDelete(item.id)} moved={() => handleMove(index, 1)} changed={handleChange} changedColor={handleChangeColor} onDragStart={handleDrag}/> : <></>)}
+                </Board>
+                <Board onDrop={handleDrop} onDragOver={handleDragOver} key={'board2'} row={2} name={'Ongoing:'}>
+                    {allTasks.allTasks.map((item, index) => item.row === 2 ? <Task  taskNumber={item.id} info={item.info} row={item.row} color={item.color} key={item.id + item.info}  
+                    deleted={() => handleDelete(item.id)} moved={() => handleMove(index, 2)} changed={handleChange} changedColor={handleChangeColor} onDragStart={handleDrag}/> : <></>)}
+                </Board> 
+                <Board  onDrop={handleDrop} onDragOver={handleDragOver} key={'board3'} row={3} name={'Done:'}>
+                    {allTasks.allTasks.map((item, index) => item.row === 3 ? <Task  taskNumber={item.id} info={item.info} row={item.row} color={item.color} key={item.id + item.info} 
+                    deleted={() => handleDelete(item.id)} moved={() => handleMove(index, 3)} changed={handleChange} changedColor={handleChangeColor} onDragStart={handleDrag}/> : <></>)}
+                </Board> 
+                
+            </div>
+        </div> */}
