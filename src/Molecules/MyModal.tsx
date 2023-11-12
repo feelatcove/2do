@@ -25,8 +25,8 @@ const MyModal = ({setModal}: Props) => {
             <Dropdown onChange={colorValueSet} />
             <input placeholder={inputValue} className='p-4 m-4 h-1/4 text-4xl rounded-xl truncate' onChange={(e) => inputValueSet(e.target.value)}></input>
                 <div className='flex flex-row justify-end gap-10 mr-10 mt-6'>
-                  <MyButton name='Cancel' className={'bg-red-500 rounded-xl text-white text-2xl'} onClick={() => setModal(false)}/> 
-                  <MyButton name='Add!' className={'bg-green-500 rounded-xl text-white'} onClick={() => handleCreate()}/> 
+                  <MyButton name='Cancel' className={'bg-red-500 rounded-xl text-white text-2xl hover:brightness-125'} onClick={() => setModal(false)}/> 
+                  <MyButton name='Add!' className={'bg-green-500 rounded-xl text-white hover:brightness-125'} onClick={() => handleCreate()}/> 
                 </div>
           </div>
         </div>
