@@ -7,7 +7,7 @@ type headerProps = {
 
 
 const Header = ({setModal}: headerProps) => {
-    let url = 'https://github.com/feelatcove/todo'
+    let url = 'https://github.com/feelatcove/2do'
     return (
         <div className={"bg-gradient-to-t from-violet-400 to-violet-500 flex flex-row justify-between "}>
             <MyButton name={'Add a new task +'} className={"flex ml-28 animate-wiggle hover:brightness-125 text-green-300 "} 

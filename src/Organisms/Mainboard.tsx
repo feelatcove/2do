@@ -14,8 +14,8 @@ const Mainboard = () => {
         <div >
             <div className='flex flex-row justify-evenly mt-8'>
                 {boards.map((item, boardIndex) => <Board onDrop={handleDrop} onDragOver={handleDragOver} key={item.name + boardIndex+1} row={boardIndex + 1} name={item.name}>
-                {allTasks.allTasks.map((item, index) => item.row === boardIndex+1 ? <Task  taskNumber={item.id} info={item.info} color={item.color} key={item.id + item.info} 
-                    deleted={() => handleDelete(item.id)} moved={() => handleMove(index, boardIndex + 2)} changed={handleChange} changedColor={handleChangeColor} onDragStart={handleDrag}/> : <></>)}
+                {allTasks.allTasks.map((item) => item.row === boardIndex+1 ? <Task  taskNumber={item.id} info={item.info} color={item.color} key={item.id + item.info}
+                    deleted={() => handleDelete(item.id)} changed={handleChange} changedColor={handleChangeColor} onDragStart={handleDrag}/> : <></>)}
                 </Board>)}
             </div>
         </div>
