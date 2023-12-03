@@ -44,7 +44,6 @@ const Mainboard = () => {
             id: id,
             info: info,
         }))
-        console.log(id + " " + info)
     }
 
     function handleDelete(id: number) {
